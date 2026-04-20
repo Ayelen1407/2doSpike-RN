@@ -4,14 +4,14 @@ import { Producto } from '../../tipos/productos';
 export default function ArticuloParaProductoDeCompra({
   item,
   alPresionar,
-  alMantener,
+  alMantenerPresionado,
 }: {
   item: Producto;
   alPresionar: () => void;
-  alMantener: () => void;
+  alMantenerPresionado: () => void;
 }) {
   return (
-    <Pressable onPress={alPresionar} onLongPress={alMantener} style={styles.row}>
+    <Pressable onPress={alPresionar} onLongPress={alMantenerPresionado} style={styles.row}>
       <Text style={[styles.rowText, item.done && styles.done]}>{item.name}</Text>
       <Text style={[styles.pill, item.done ? styles.pillDone : styles.pillTodo]}>
         {item.done ? '✔' : '•'}

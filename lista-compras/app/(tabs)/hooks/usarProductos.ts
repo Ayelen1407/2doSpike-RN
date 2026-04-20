@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Producto } from "../tipos/productos";
 
 export default function usarItemsDeCompra() {
-  const [items, setItems] = useState<Producto[]>([]);
+  const [productos, setItems] = useState<Producto[]>([]);
 
   const agregarProducto = (name: string) => {
     const trimmed = name.trim();
@@ -27,7 +27,7 @@ export default function usarItemsDeCompra() {
   };
 
   return {
-    items,
+    productos,
     agregarProducto,
     cambiarProducto,
     eliminarProducto,

@@ -1,16 +1,16 @@
 import { useState } from "react";
 import { View } from "react-native";
-import { InputParaProducto } from "../contenidos/inputParaProducto"; 
-import { BotonParaAgregarProducto } from "../contenidos/botonParaAgregarProducto";
+import  InputParaProducto  from "../contenidos/inputParaProducto"; 
+import  BotonParaAgregarProducto  from "../contenidos/botonParaAgregarProducto";
 
-export default function FormularioParaItemNuevo({
+export default function FormularioParaProductoNuevo({
   alCompletarFormulario,
 }: {
   alCompletarFormulario: (texto: string) => void;
 }) {
   const [texto, setTexto] = useState("");
 
-  const handleAgregar = () => {
+  const manejarEnvio = () => {
     alCompletarFormulario(texto);
     setTexto("");
   };
@@ -20,9 +20,9 @@ export default function FormularioParaItemNuevo({
       <InputParaProducto
         valor={texto}
         alCambiar={setTexto}
-        alEnviar={handleAgregar}
+        alEnviar={manejarEnvio}
       />
-      <BotonParaAgregarProducto alPresionar={handleAgregar} />
+      <BotonParaAgregarProducto alPresionar={manejarEnvio} />
     </View>
   );
 }

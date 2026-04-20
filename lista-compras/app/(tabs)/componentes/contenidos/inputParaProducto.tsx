@@ -1,6 +1,6 @@
 import { TextInput, StyleSheet } from 'react-native';
 
-export function InputParaProducto({ valor, alCambiar, alEnviar }: any) {
+export default function InputParaProducto({ valor, alCambiar, alEnviar }: any) {
   return (
     <TextInput
       value={valor}

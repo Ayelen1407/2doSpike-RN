@@ -1,6 +1,6 @@
 import { Pressable, Text, StyleSheet } from 'react-native';
 
-export function BotonParaAgregarProducto({ alPresionar }: any) {
+export default function BotonParaAgregarProducto({ alPresionar }: any) {
   return (
     <Pressable style={styles.addBtn} onPress={alPresionar}>
       <Text style={styles.addTxt}>Agregar</Text>

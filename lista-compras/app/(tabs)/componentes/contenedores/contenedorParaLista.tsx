@@ -1,7 +1,7 @@
 import { FlatList, View, Text, StyleSheet } from 'react-native';
 import ArticuloParaProductosDeCompra from '../contenidos/articuloParaProductoDeCompra';
 
-export function ContenedorParaLista({ items, toggleItem, removeItem }: any) {
+export default function ContenedorParaLista({ items, toggleItem, removeItem }: any) {
   return (
     <FlatList
       data={items}
@@ -10,7 +10,7 @@ export function ContenedorParaLista({ items, toggleItem, removeItem }: any) {
         <ArticuloParaProductosDeCompra
           item={item}
           alPresionar={() => toggleItem(item.id)}
-          alMantener={() => removeItem(item.id)}
+          alMantenerPresionado={() => removeItem(item.id)}
         />
       )}
       ListEmptyComponent={<Text style={styles.empty}>Sin productos. ¡Agregá el primero! 😊</Text>}

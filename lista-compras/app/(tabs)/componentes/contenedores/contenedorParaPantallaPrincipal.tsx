@@ -1,9 +1,9 @@
 import { View, StyleSheet } from "react-native";
 
-export default function ContenedorParaPantallaPrincipal ({ children }: any) {
-    return <View style={styles.container}>{children}</View>;
+export default function ContenedorParaPantallaPrincipal({ children }: { children: React.ReactNode }) {
+  return <View style={styles.container}>{children}</View>;
 }
 
 const styles = StyleSheet.create({
-    container: {flex: 1, padding: 16, gap: 12, backgroundColor: "#ffff"},
+  container: { flex: 1, padding: 16, gap: 12, backgroundColor: "#fff" },
 });

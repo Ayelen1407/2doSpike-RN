@@ -1,7 +1,7 @@
 import { useState } from "react";
-import { View } from "react-native";
-import  InputParaProducto  from "../contenidos/inputParaProducto"; 
-import  BotonParaAgregarProducto  from "../contenidos/botonParaAgregarProducto";
+import { View } from "react-native";  
+import InputParaProducto from "../contenidos/inputParaProducto";
+import BotonParaAgregarProducto from "../contenidos/botonParaAgregarProducto";
 
 export default function FormularioParaProductoNuevo({
   alCompletarFormulario,
@@ -11,8 +11,11 @@ export default function FormularioParaProductoNuevo({
   const [texto, setTexto] = useState("");
 
   const manejarEnvio = () => {
-    alCompletarFormulario(texto);
-    setTexto("");
+    const trimmed = texto.trim();
+    if (trimmed) {
+      alCompletarFormulario(trimmed);
+      setTexto("");
+    }
   };
 
   return (

@@ -1,6 +1,14 @@
 import { TextInput, StyleSheet } from 'react-native';
 
-export default function InputParaProducto({ valor, alCambiar, alEnviar }: any) {
+export default function InputParaProducto({ 
+  valor, 
+  alCambiar, 
+  alEnviar 
+}: { 
+  valor: string; 
+  alCambiar: (text: string) => void; 
+  alEnviar: () => void; 
+}) {
   return (
     <TextInput
       value={valor}
@@ -9,6 +17,7 @@ export default function InputParaProducto({ valor, alCambiar, alEnviar }: any) {
       style={styles.input}
       returnKeyType="done"
       onSubmitEditing={alEnviar}
+      blurOnSubmit={false}
     />
   );
 }

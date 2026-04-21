@@ -1,24 +1,21 @@
-import ContenedorParaPantallaPrincipal from "./componentes/contenedores/contenedorParaPantallaPrincipal";
-import TituloDePagina from "./componentes/contenidos/tituloDePagina";
-import FormularioParaProductoNuevo from "./componentes/contenedores/formularioParaProductoNuevo";
-import ListaDeCompras from "./componentes/contenedores/listaDeCompras";
-import usarProductosDeCompra from "./hooks/usarProductos";
+import ContenedorParaPantallaPrincipal from './componentes/contenedores/contenedorParaPantallaPrincipal';
+import FormularioParaProductoNuevo from './componentes/contenedores/formularioParaProductoNuevo';
+import ContenedorParaLista from './componentes/contenedores/contenedorParaLista';
+import TituloDePagina from './componentes/contenidos/tituloDePagina';
+import useItemsDeCompra from './hooks/usarProductos';
 
 export default function App() {
-  const { productos, eliminarProducto, cambiarProducto, agregarProducto } = usarProductosDeCompra();
+  const { productos, agregarProducto, cambiarProducto, eliminarProducto } = useItemsDeCompra();
 
   return (
     <ContenedorParaPantallaPrincipal>
-      <TituloDePagina/>
-
-      <ListaDeCompras
-      items= {productos}
-      alPresionarUnProducto={cambiarProducto}
-      alMantenerPresionSobreUnItem={eliminarProducto}/>
-
-      <FormularioParaProductoNuevo
-      alCompletarFormulario={agregarProducto}/>
-
+      <TituloDePagina />
+      <FormularioParaProductoNuevo alCompletarFormulario={agregarProducto} />
+      <ContenedorParaLista
+        items={productos}
+        toggleItem={cambiarProducto}
+        removeItem={eliminarProducto}
+      />
     </ContenedorParaPantallaPrincipal>
   );
 }

@@ -1,13 +1,22 @@
 import { FlatList, View, Text, StyleSheet } from 'react-native';
-import ArticuloParaProductosDeCompra from '../contenidos/articuloParaProductoDeCompra';
+import ArticuloParaProductoDeCompra from '../contenidos/articuloParaProductoDeCompra';
+import { Producto } from '../../tipos/productos';
 
-export default function ContenedorParaLista({ items, toggleItem, removeItem }: any) {
+export default function ContenedorParaLista({
+  items,
+  toggleItem,
+  removeItem,
+}: {
+  items: Producto[];
+  toggleItem: (id: string) => void;
+  removeItem: (id: string) => void;
+}) {
   return (
     <FlatList
       data={items}
       keyExtractor={(it) => it.id}
       renderItem={({ item }) => (
-        <ArticuloParaProductosDeCompra
+        <ArticuloParaProductoDeCompra
           item={item}
           alPresionar={() => toggleItem(item.id)}
           alMantenerPresionado={() => removeItem(item.id)}

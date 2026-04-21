@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Producto } from "../tipos/productos";
 
-export default function usarItemsDeCompra() {
+export default function useItemsDeCompra() {
   const [productos, setItems] = useState<Producto[]>([]);
 
   const agregarProducto = (name: string) => {
